@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod 
+metadata:
+   name: webpod
+   labels: 
+     app: samplewebapp 
+spec:
+  containers:
+  - name: htmlwebapp
+    image: sam:0.1
+    ports:
+      - containerPort: 80
+...
+
+# To run this file follow the below command
+# kubectl apply -f pod.yaml
+# and also needed service file 
+# kubectl apply -f podsvc.yaml
