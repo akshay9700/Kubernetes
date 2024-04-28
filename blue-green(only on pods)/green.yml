@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: greenpod
+  labels: 
+    app: greensamplepod
+    version: v2
+spec:
+  containers:
+  - name: greencont
+    image: samplegreen:0.1
+    ports:
+    - containerPort: 80 
+...
