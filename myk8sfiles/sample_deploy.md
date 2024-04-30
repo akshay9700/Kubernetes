@@ -1,4 +1,4 @@
-### notes regarding above file
+### notes regarding sampledeploy.yml file
 
 
 to run sampledeploy file 
