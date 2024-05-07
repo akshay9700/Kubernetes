@@ -28,5 +28,7 @@ kubectl
 
 RBAC(Role Based Access Controller)  
 
+
+**K8s Architecture:**
 ![Kubernetes-Architecture](https://github.com/akshay9700/Kubernetes/assets/110522215/9247c00b-adcc-4b32-9f0e-8c97d1f1b3bd)
 
