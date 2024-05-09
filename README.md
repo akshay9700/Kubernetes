@@ -3,6 +3,10 @@ Different Kubernetes files are present in this repo <br/>
 
 NodePort range is 30000 to 32767
 
+
+GitHub repos: [k8s-repo](https://github.com/antonputra/tutorials/tree/main/lessons/171)
+
+
 ## kubectl imp commands 
 
 ```
