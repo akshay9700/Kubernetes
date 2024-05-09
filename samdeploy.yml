@@ -13,6 +13,9 @@ spec:
   replicas: 3
   strategy:
     type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
   selector:
     matchLabels:
      app: samplehtmlweb
