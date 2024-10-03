@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: <namespace-name>               # Name of the namespace
+  labels:                              # Optional labels for the namespace
+    <key>: <value>                     # environment: production    {Example label}
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: <pod-name>                     # Name of the pod
+  namespace: <namespace>               # Namespace where the pod will run
+spec:
+  containers:                          # List of containers in the pod
+    - name: <container-name>           # Name of the container
+      image: <container-image>         # Docker image for the container
+      ports:                           # List of ports to expose from the container
+        - containerPort: <port-number> # Port on which the container listens
+      env:                             # Environment variables for the container (optional)
+        - name: <env-var-name>
+          value: <env-var-value>
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: <service-name>               # Name of the service
+  namespace: <namespace>             # Namespace for the service
+spec:
+  type: <service-type>                # Type of service (e.g., ClusterIP, NodePort, LoadBalancer)
+  selector:                           # Selector to identify the pods to route traffic to
+    app: <app-label>                  # Example: app: my-app
+  ports:                              # List of ports exposed by the service
+    - port: <service-port>            # The port that the service will expose
+      targetPort: <container-port>     # The port on the container to which the traffic will be forwarded
+      nodePort: <node-port>            # Optional; only for NodePort type, specifies the port on the node
+
+...
