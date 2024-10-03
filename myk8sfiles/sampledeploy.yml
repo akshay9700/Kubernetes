@@ -38,7 +38,7 @@ spec:
   selector:
     app: htmlwebapp
   ports:
-  - port: 80
-    targetPort: 80
-    nodePort: 30786
+  - port: 80  # External port for the service 
+    targetPort: 80  # Internal port on the container
+    nodePort: 30786  # Port on the node
 ...
