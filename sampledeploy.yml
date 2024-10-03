@@ -46,3 +46,10 @@ spec:
     targetPort: 80
     nodePort: 31000
 ...
+
+
+
+# You can monitor the status of your deployment by using the following command:
+# kubectl rollout status deployment/my-app-deployment
+# If you need to roll back to a previous version of your deployment, you can use the command:
+# kubectl rollout undo deployment/my-app-deployment
