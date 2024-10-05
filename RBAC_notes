@@ -1,0 +1,61 @@
+Example: dev-role.yaml
+========================================================================================================
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: dev  # Dev namespace
+  name: dev-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services", "configmaps"]
+  verbs: ["get", "list", "watch", "create", "update", "delete"]
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "list", "watch", "create", "update", "delete"]
+========================================================================================================
+
+Step 2: Create RoleBindings
+Next, create RoleBindings for each group to bind them to their respective roles.
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: dev-rolebinding
+  namespace: dev  # Dev namespace
+subjects:
+- kind: Group
+  name: dev-group  # The name of the dev group
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: dev-role  # Refers to the Role defined above
+  apiGroup: rbac.authorization.k8s.io
+
+========================================================================================================
+create RoleBindings for each user to bind them to their respective roles.
+    
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: view-only-users
+  namespace: samplenamespace
+subjects:
+- kind: User
+  name: usera  # First user
+  apiGroup: rbac.authorization.k8s.io
+- kind: User
+  name: userb  # Second user
+  apiGroup: rbac.authorization.k8s.io
+- kind: User
+  name: userc  # Third user
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: view-all  # Refers to the Role defined above
+  apiGroup: rbac.authorization.k8s.io
+========================================================================================================
+
+TYPE THIS IN CHATGPT U WILL GET THE ANSWER 
+
+  create a rbac with dev group having [user a user b user c] test group having [test a test b] and the dev group having access to the dev namespace visversa
+  and how to add user a user b user c to the group
