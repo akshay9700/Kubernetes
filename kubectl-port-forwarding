@@ -1,0 +1,9 @@
+kubectl port forwarding 
+
+kubectl port-forward pod/<pod-name> <local-port>:<pod-port>
+
+ex:
+kubectl port-forward svc/argocd-server -n argocd 8080:443 --address 0.0.0.0 &
+
+
+& is for run process in background
