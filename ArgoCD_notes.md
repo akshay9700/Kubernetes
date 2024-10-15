@@ -16,7 +16,7 @@ go to
 > minikube service argocd-server -n argocd
 
 
-#### to get the password 
+#### to get the password follow the below commands 
 > kubectl get secret -n argocd<br/>
 > kubectl edit secret argocd-initial-admin-secret -n argocd<br/>
 > echo cVY2RTBPRElrVEtqZGdabA== | base64 --decode 
@@ -31,10 +31,13 @@ https://www.youtube.com/watch?v=ZgJQG475oME
 
 # Notes 
 
+ArgoCD server notes 
 argo server => UI is depended on this <br/>
-repo server =>  <br/>
-redis => <br/>
+repo server =>  this interacts with version control system <br/>
+redis => caching purpose<br/>
 notifications => <br/>
-dex server => <br/>
+dex server => setup for login via google FB <br/>
 application sets => <br/>
-application controller =>
+application controller => state controller 
+
+
