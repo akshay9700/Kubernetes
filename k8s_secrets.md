@@ -76,3 +76,13 @@ data:
   db-username: bXlVc2VybmFtZQ==  # base64 encoded value of "myUsername"
   db-password: cGFzc3dvcmQ=      # base64 encoded value of "password"
 ```
+
+
+base64 encoded notes
+```
+echo -n 'abcdefg' | base64 
+```
+to decode base64 
+```
+echo 'YWJjZGVmZw==' | base64 --decode 
+```
