@@ -77,6 +77,7 @@ data:
   db-password: cGFzc3dvcmQ=      # base64 encoded value of "password"
 ```
 
+---
 
 base64 encoded notes
 ```
