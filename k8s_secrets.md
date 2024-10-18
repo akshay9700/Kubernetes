@@ -55,7 +55,8 @@ spec:
   selector:
     app: my-app
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 80          # Port that the service will expose
       targetPort: 80    # Port that the container listens on
   type: NodePort       # Change to LoadBalancer or NodePort if needed
