@@ -40,4 +40,7 @@ dex server => setup for login via google FB <br/>
 application sets => <br/>
 application controller => state controller 
 
+=============================================================
+
+how to access private repo in argo cd 
 
