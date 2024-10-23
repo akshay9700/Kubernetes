@@ -1,8 +1,46 @@
 # kubernetes
-Different Kubernetes files are present in this repo <br/>
+Kubernetes files and notes repo <br/>
 
-NodePort range is 30000 to 32767
+### K8s Architecture:
 
+![Kubernetes-Architecture](https://github.com/akshay9700/Kubernetes/assets/110522215/9247c00b-adcc-4b32-9f0e-8c97d1f1b3bd)
+
+---
+
+### General Structure of Kubernetes realtime folder
+```
+my-k8s-project/
+│
+├── manifests/
+│   ├── deployments/
+│   │   ├── app-deployment.yaml
+│   │   └── other-app-deployment.yaml
+│   ├── services/
+│   │   ├── app-service.yaml
+│   │   └── other-app-service.yaml
+│   ├── configmaps/
+│   │   └── app-configmap.yaml
+│   ├── secrets/
+│   │   └── app-secret.yaml
+│   ├── persistent-volumes/
+│   │   └── app-pv.yaml
+│   └── namespaces/
+│       └── app-namespace.yaml
+│
+├── scripts/
+│   └── deploy.sh
+│
+├── charts/
+│   └── my-app-chart/
+│       ├── templates/
+│       │   ├── deployment.yaml
+│       │   ├── service.yaml
+│       │   └── configmap.yaml
+│       └── values.yaml
+│
+├── README.md
+└── k8s-setup.sh
+```
 
 GitHub repos: [k8s-repo](https://github.com/antonputra/tutorials/tree/main/lessons/171)
 
@@ -27,14 +65,9 @@ kubectl top nodes
 kubectl top pods                                          
 kubectl get hpa -w                                           # to display events for every 15sec 
 kubectl get events
-kubectl
+
 ```
 
-RBAC(Role Based Access Controller)  
-
-
-**K8s Architecture:**
-![Kubernetes-Architecture](https://github.com/akshay9700/Kubernetes/assets/110522215/9247c00b-adcc-4b32-9f0e-8c97d1f1b3bd)
 
 ---
 
