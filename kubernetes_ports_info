@@ -1,0 +1,11 @@
+kubernetes ports
+
+TCP 6443         Kubernetes_API_Server
+TCP 2379 to 2380 etcd_server_client_API
+TCP 10250        Kubelet_API
+TCP 10251        kube_scheduler
+TCP 10252        kube_controller_manager
+TCP 10255        Read_Only_Kubelet_API
+
+TCP 30000-32767 NodePortServices
+
