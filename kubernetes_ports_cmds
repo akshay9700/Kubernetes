@@ -9,3 +9,12 @@ TCP 10255        Read_Only_Kubelet_API
 
 TCP 30000-32767 NodePortServices
 
+
+
+==================================
+kubectl commands 
+
+kubectl describe ns default
+kubectl run pod --image nginx:latest
+kubectl get ns
+kubectl get pods
