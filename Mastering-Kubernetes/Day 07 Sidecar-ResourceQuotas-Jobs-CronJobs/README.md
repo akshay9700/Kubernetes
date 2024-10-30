@@ -61,3 +61,5 @@ This repository provides a practical demonstration of Kubernetes Sidecar contain
 - [Kubernetes Documentation on Resource Quotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
 
 ---
+
+resources quotes apply on NAMESPACES recources limits apply on CONTAINERS
