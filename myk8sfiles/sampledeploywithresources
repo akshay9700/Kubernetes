@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampledeploy
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: htmlwebapp
+  template:
+    metadata:
+      name: samplepod
+      labels:
+        app: htmlwebapp
+    spec:
+      containers:
+        - name: samplecontainer
+          image: akshay0909/sam:0.1
+          ports:
+            - containerPort: 80
+          restartPolicy: OnFailure
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+# requests: Specifies the minimum amount of resources the container is guaranteed to have.
+# Kubernetes uses this to schedule the pod on a node with enough resources.
+# memory: "64Mi": Minimum of 64 MB of memory.
+# cpu: "250m": Minimum of 250 millicores of CPU (25% of a CPU core).
+# limits: Specifies the maximum amount of resources the container can use.
+# memory: "128Mi": Maximum of 128 MB of memory.
+# cpu: "500m": Maximum of 500 millicores of CPU (50% of a CPU core).
